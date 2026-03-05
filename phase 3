@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<BankAccount> accounts = new List<BankAccount>();
+
+        BankAccount normalAccount = new BankAccount(1, "Mohamed", 5000);
+        SavingsAccount savingAccount = new SavingsAccount(2, "Ali", 8000, 0.05, 1000);
+
+        accounts.Add(normalAccount);
+        accounts.Add(savingAccount);
+
+        foreach (BankAccount account in accounts)
+        {
+            account.Deposit(1000);
+            account.Withdraw(500);
+            account.DisplayAccountInfo();
+        }
+    }
+}
